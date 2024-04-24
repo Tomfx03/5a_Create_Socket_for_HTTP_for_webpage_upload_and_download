@@ -4,22 +4,14 @@
 To write a PYTHON program for socket for HTTP for web page upload and download
 ## Algorithm :
 1.Start the program.
-
 2.Get the frame size from the user
-
-3.To create the frame based on the user request.
-
-4.To send frames to server from the client side.
-
-5.If your frames reach the server it will send ACK signal to client otherwise it will send NACK signal to client.
-
-6.Stop the program
-
+3.To create the frame based on the user request & To send frames to server from the client side.
+4.If your frames reach the server it will send ACK signal to client otherwise it will send NACK signal to client.
+5.Stop the program
 
 ## Program :
 ```
 import socket
-
 def send_request(host, port, request):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
@@ -35,7 +27,6 @@ def upload_file(host, port, filename):
 {content_length}\r\n\r\n{file_data.decode()}"
         response = send_request(host, port, request)
     return response
-
 ```
 ```
 def download_file(host, port, filename):
@@ -49,19 +40,15 @@ def download_file(host, port, filename):
 if __name__ == "__main__":
     host = 'example.com'
     port = 80
-
     # Upload file
     upload_response = upload_file(host, port, 'example.txt')
     print("Upload response:", upload_response)
-
     # Download file
     download_file(host, port, 'example.txt')
     print("File downloaded successfully.")
-
 ```
 ## Output :
 ![5a](https://github.com/VPOOJAASREE/5a_Create_Socket_for_HTTP_for_webpage_upload_and_download/assets/155145525/8748dc18-ef21-4802-a8e3-d048a5b79455)
-
 
 ## Result :
 Thus the socket for HTTP for web page upload and download created and executed successfully.
